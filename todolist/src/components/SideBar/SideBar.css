@@ -1,0 +1,57 @@
+@import url('https://fonts.googleapis.com/css2?family=Neucha&display=swap');
+
+.sidebar{
+    display: flex;
+    flex-direction: column;
+}
+.logo{
+    display: flex;
+    justify-content: space-around;
+    font-family:'Neucha', cursive;
+    font-size: 1.8rem;
+    border-bottom: .3rem solid rgba(34,193,195,1);
+}
+.foto{
+    display: flex;
+    justify-content: center;
+    margin: 30px auto;
+    background-color: #ffd76b;
+    background-image: url("assets/images/foto.jpg");
+    background-position: center;
+    background-size: cover;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+}
+.saudacao{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 5px;
+}
+.GIF{
+    display: flex;
+    justify-content: center;
+    margin-top: 30%;
+}
+.btn__sair{
+    margin-top: 80%;
+    border: none;
+    color: white;
+    border-radius: 5px;
+    font-family: "Exo", sans-serif;
+    padding: 5px;
+    text-align: center;
+    font-weight: 700;
+    text-transform: uppercase;
+    cursor: pointer;
+    width: 100%;
+    background-color: rgb(37, 136, 138);
+}
+footer{
+    display: flex;
+    justify-content: center;
+    font-size: 10px;
+    text-align: center;
+    margin-top: 10px;
+}

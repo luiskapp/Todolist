@@ -1,0 +1,71 @@
+@import url('https://fonts.googleapis.com/css2?family=Neucha&display=swap');
+
+.Todolist__container{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    gap: 10px;
+    
+}
+.container{
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-top: 50px;
+}
+.Titulo__container{
+    border-bottom: .3rem solid rgba(34,193,195,1);
+    font-size: 3rem;
+    font-family: 'Neucha', cursive;
+    margin-top: 15px;
+}
+.Todolist{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 10px;
+    width: 40%;
+    height: 430px;
+    overflow-y: scroll;
+    margin-left: -90px;
+}
+.Acoes__adicionar {
+  border: none;
+  color: white;
+  border-radius: 5px;
+  font-family: "Exo", sans-serif;
+  padding: 5px;
+  min-width: 200px;
+  text-align: center;
+  font-weight: 700;
+  text-transform: uppercase;
+  cursor: pointer;
+  width: 100%;
+  background-color: rgba(34,193,195,1);
+}
+.Acoes__adicionar:hover{
+    background-color: #ffff;
+    color:rgba(34,193,195,1);
+    border: 1px solid rgba(34,193,195,1);
+}
+/* Works on Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: rgb(216, 216, 216) rgba(255, 255, 255, 0.562);
+}
+
+/* Works on Chrome, Edge, and Safari */
+*::-webkit-scrollbar {
+  width: 12px;
+}
+
+*::-webkit-scrollbar-track {
+  background: rgb(216, 216, 216);
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: rgb(216, 216, 216);
+  border-radius: 10px;
+}

@@ -1,0 +1,19 @@
+.Humor{
+    background-color:rgb(216, 216, 216);
+    margin: 15px;
+    padding: 15px;
+    border-radius: 20px;
+    color: black;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.3);
+}
+div .Humor{
+    align-self: end;
+}
+.Humores{
+    display: flex ;
+    flex-direction: row;
+    justify-content: space-around;
+}
+.sorriso, .love, .serio,.sono{
+    cursor: pointer;
+}

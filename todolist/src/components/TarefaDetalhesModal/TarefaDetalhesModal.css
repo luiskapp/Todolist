@@ -1,0 +1,48 @@
+.TarefaDetalhes {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 30px;
+}
+.Tarefa__Todolist {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  border-radius: 10px;
+  background-color: rgb(252, 249, 249);
+  min-width: 100%;
+  min-width: 150px;
+  min-height: 4vh;
+  gap: 5px;
+}
+.deletar {
+  border: none;
+  color: white;
+  border-radius: 5px;
+  font-family: "Exo", sans-serif;
+  padding: 5px;
+  min-width: 200px;
+  text-align: center;
+  font-weight: 700;
+  text-transform: uppercase;
+  cursor: pointer;
+  width: 100%;
+  background-color: rgb(219, 49, 49);
+}
+.Atualizar{
+  border: none;
+  color: white;
+  border-radius: 5px;
+  font-family: "Exo", sans-serif;
+  padding: 5px;
+  min-width: 200px;
+  text-align: center;
+  font-weight: 700;
+  text-transform: uppercase;
+  cursor: pointer;
+  width: 100%;
+  background-color:rgb(37, 136, 138);
+}
