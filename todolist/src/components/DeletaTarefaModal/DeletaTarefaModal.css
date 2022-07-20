@@ -1,0 +1,39 @@
+.DeletaTarefaModal {
+    margin-top: -20px;
+  }
+  
+  .DeletaTarefaModal > div {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+  }
+  
+  .DeletaTarefaModal__foto {
+    position: absolute;
+    right: 0px;
+    bottom: 10px;
+    width: 80px;
+  }
+  
+  .DeletaTarefaModal__confirmar,
+  .DeletaTarefaModal__cancelar {
+    border: none;
+    border-radius: 5px;
+    font-family: "Exo", sans-serif;
+    padding: 5px;
+    max-width: 280px;
+    text-align: center;
+    font-weight: 700;
+    text-transform: uppercase;
+    cursor: pointer;
+    width: 48%;
+    color: white;
+  }
+  
+  .DeletaTarefaModal__confirmar {
+    background-color: darkviolet;
+  }
+  
+  .DeletaTarefaModal__cancelar {
+    background-color: red;
+  }

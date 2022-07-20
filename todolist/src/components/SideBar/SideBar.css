@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Neucha&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
 
 .sidebar{
     display: flex;
@@ -22,12 +23,14 @@
     width: 150px;
     height: 150px;
     border-radius: 50%;
+
 }
 .saudacao{
     display: flex;
     flex-direction: column;
     justify-content: center;
     padding: 5px;
+    font-family: 'Ubuntu', sans-serif;
 }
 .GIF{
     display: flex;

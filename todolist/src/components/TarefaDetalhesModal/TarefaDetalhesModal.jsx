@@ -1,7 +1,8 @@
+import { ActionMode } from "constants/index";
 import "./TarefaDetalhesModal.css";
 import Modal from "components/Modal/Modal";
 
-function TarefaDetalhesModal({ todolists, closeModal }) {
+function TarefaDetalhesModal({ todolists, closeModal, }) {
   return (
     <Modal closeModal={closeModal}>
       <div className="TarefaDetalhes">
@@ -12,12 +13,6 @@ function TarefaDetalhesModal({ todolists, closeModal }) {
           <div>
             <b>Quando: </b> {todolists.dia}
           </div>
-        </div>
-        <div className="TarefaDetalhes__button">
-          <button className="Atualizar">Atualizar</button>
-        </div>
-        <div className="TarefaDetalhes__button">
-          <button className="deletar">Deletar</button>
         </div>
       </div>
     </Modal>

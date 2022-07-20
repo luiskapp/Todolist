@@ -20,4 +20,25 @@
     gap: 30px;
     cursor: pointer;
 }
-
+.TarefaLista__tag {
+    background-color:rgb(37, 136, 138) !important;
+    color: white !important;
+    position: relative;
+    font-size: 0.6em;
+    border-radius: 5px;
+    padding: 5px;
+    top: 15px;
+    left: 10px;
+    letter-spacing: 1px;
+}
+.TarefaLista__tag--deletar{
+    background-color:rgb(219, 49, 49) !important;
+    color: white !important;
+    position: relative;
+    font-size: 0.6em;
+    border-radius: 5px;
+    padding: 5px;
+    top: 15px;
+    left: 10px;
+    letter-spacing: 1px;
+}

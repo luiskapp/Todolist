@@ -1,11 +1,12 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback } from "react";
+import { ActionMode } from "constants/index";
 import TarefaDetalhesModal from "components/TarefaDetalhesModal/TarefaDetalhesModal";
 import Tarefa from "components/Tarefa/Tarefa";
 import { TarefaService } from "services/TarefaService";
 import pana from "assets/images/pana.png";
 import "./ToDoList.css";
 
-function ToDoList({ createTarefa, tarefaCriada }) {
+function ToDoList({ tarefaCriada, mode, updateTarefa, deleteTarefa, tarefaEditada, tarefaRemovida}) {
   const [todolists, setTodolists] = useState([]);
 
   const [TarefaModal, setTarefaModal] = useState(false);
@@ -17,36 +18,41 @@ function ToDoList({ createTarefa, tarefaCriada }) {
 
   const getTarefaById = async (todolistId) => {
     const response = await TarefaService.getById(todolistId);
-    setTarefaModal(response);
+    const mapper = {
+      [ActionMode.NORMAL]: () => setTarefaModal(response),
+      [ActionMode.ATUALIZAR]: () => updateTarefa(response),
+      [ActionMode.DELETAR]: () => deleteTarefa(response),
+    };
+
+    mapper[mode]();
   };
 
   useEffect(() => {
     getList();
-  }, []);
+  }, [tarefaEditada, tarefaRemovida]);
 
-  const adicionaTarefaNaLista = (todolist) => {
+  const adicionaTarefaNaLista = useCallback((todolist) => {
     const lista = [...todolists, todolist];
     setTodolists(lista);
-  };
+  } , [todolists]);
 
   useEffect(() => {
-    if (tarefaCriada) adicionaTarefaNaLista(tarefaCriada);
-  }, [tarefaCriada]);
+    if (
+      tarefaCriada &&
+      !todolists.map(({ id }) => id).includes(tarefaCriada.id)
+    ) {
+      adicionaTarefaNaLista(tarefaCriada);
+    }
+  }, [adicionaTarefaNaLista, tarefaCriada, todolists]);
+
 
   return (
     <div className="Todolist__container">
-      <p className="Titulo__container"><b>Minhas Tarefas</b></p>
+      <p className="Titulo__container">
+        <b>Minhas Tarefas</b>
+      </p>
       <span className="container">
         <div>
-          <div>
-            <button
-              type="button"
-              className="Acoes__adicionar"
-              onClick={() => createTarefa()}
-            >
-              Adicionar Tarefa
-            </button>
-          </div>
           <div>
             <img src={pana} alt="" width={400} />
           </div>
@@ -54,6 +60,7 @@ function ToDoList({ createTarefa, tarefaCriada }) {
         <div className="Todolist">
           {todolists.map((todolist, index) => (
             <Tarefa
+              mode={mode}
               key={`Todolist-${index}`}
               todolist={todolist}
               index={index}

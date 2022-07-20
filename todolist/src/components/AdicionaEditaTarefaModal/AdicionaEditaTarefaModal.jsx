@@ -1,12 +1,13 @@
 import { useState, useEffect } from "react";
+import { ActionMode } from "constants/index";
 import Modal from "components/Modal/Modal";
-import "./AdicionaTarefaModal.css";
+import "./AdicionaEditaTarefaModal.css";
 import { TarefaService } from "services/TarefaService";
 
-function AdicionaTarefaModal({ closeModal, onCreateTarefa }) {
+function AdicionaEditaTarefaModal({ closeModal, onCreateTarefa, mode, tarefaToUpdate, onUpdateTarefa }) {
   const form = {
-    tarefa: "",
-    dia: "",
+    tarefa: tarefaToUpdate?.tarefa ??"",
+    dia: tarefaToUpdate?.dia ??"",
   };
 
   const [state, setState] = useState(form);
@@ -29,18 +30,36 @@ function AdicionaTarefaModal({ closeModal, onCreateTarefa }) {
     canDisableSendButton();
 })
 
-const createTarefa = async () => {
+const handleSend = async () => {
 
     const { tarefa, dia} = state;
 
     const todolist = {
+      ...(tarefaToUpdate && {_id:tarefaToUpdate?.id}),
         tarefa,
         dia,
     }
 
-    const response = await TarefaService.create(todolist);
+    const serviceCall = {
+      [ActionMode.NORMAL]: () => TarefaService.create(todolist),
+      [ActionMode.ATUALIZAR]: () => TarefaService.updateById(tarefaToUpdate?.id, todolist),
+    }
 
-    onCreateTarefa(response);
+    const response = await serviceCall[mode]();
+
+    const actionResponse = {
+      [ActionMode.NORMAL]: () => onCreateTarefa(response),
+      [ActionMode.ATUALIZAR]: ()=> onUpdateTarefa(response),
+    }
+
+    actionResponse[mode]();
+
+    const reset = {
+      tarefa:'',
+      dia:'',
+    }
+
+    setState(reset);
 
     closeModal();
 }
@@ -49,7 +68,7 @@ const createTarefa = async () => {
     <Modal closeModal={closeModal}>
       <div className="AdicionatarefaModal">
         <form autoComplete="off">
-          <h2>Adicionar Tarefa!</h2>
+          <h2>{ ActionMode.ATUALIZAR === mode ? 'Atualizar' : 'Adicionar' } Tarefa!</h2>
           <div>
             <label className="AdicionatarefaModal__text" htmlFor="Tarefa">
               Tarefa
@@ -76,11 +95,11 @@ const createTarefa = async () => {
               required
             />
           </div>
-          <button disabled={canDisable} onClick={createTarefa} className="AdicionatarefaModal__enviar" type="button">Adicionar</button>
+          <button disabled={canDisable} onClick={handleSend} className="AdicionatarefaModal__enviar" type="button">{ ActionMode.NORMAL === mode ? 'Adicionar' : 'Atualizar' }</button>
         </form>
       </div>
     </Modal>
   );
 }
 
-export default AdicionaTarefaModal;
+export default AdicionaEditaTarefaModal;

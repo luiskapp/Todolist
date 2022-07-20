@@ -10,8 +10,9 @@ export const TarefaService = {
   create: (todolist) =>
     fetch(Api.createtarefa(), { method: "POST", body: JSON.stringify(todolist), mode: "cors", headers: {
       "Content-Type": "application/json", }}).then(parseResponse),
-  updateById: (id) =>
-    fetch(Api.updatetarefaById(id), { method: "PUT" }).then(parseResponse),
+  updateById: (id, todolist) =>
+    fetch(Api.updatetarefaById(id), { method: "PUT" , body: JSON.stringify(todolist), mode: "cors", headers: {
+      "Content-Type": "application/json", }}).then(parseResponse),
   deleteById: (id) =>
     fetch(Api.deletetarefaById(id), { method: "DELETE" }).then(parseResponse),
 };
