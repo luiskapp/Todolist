@@ -15,7 +15,7 @@ function SideBar() {
         <div className="foto"></div>
         <div className="saudacao">
           <h2>Olá, Guilherme</h2>
-          <p>Hoje é {date} de Julho - {hours}hs</p>
+          <p>Hoje é {date} de Agosto - {hours}hs</p>
         </div>
         <div className="GIF"><img src={GIF} alt="" width={170}/></div> 
       </div>
