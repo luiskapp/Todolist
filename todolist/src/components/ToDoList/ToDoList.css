@@ -13,7 +13,7 @@
     justify-content: center;
     align-items: center;
     gap: 10px;
-    margin-top: 50px;
+    /* margin-top: 10px; */
 }
 .Titulo__container{
     border-bottom: .3rem solid rgba(34,193,195,1);
@@ -27,65 +27,11 @@
     flex-direction: column;
     gap: 10px;
     width: 40%;
-    height: 430px;
+    height: 400px;
     overflow-y: scroll;
     margin-left: -90px;
 }
-.Acoes__adicionar {
-  border: none;
-  color: white;
-  border-radius: 5px;
-  font-family: "Exo", sans-serif;
-  padding: 5px;
-  min-width: 200px;
-  text-align: center;
-  font-weight: 700;
-  text-transform: uppercase;
-  cursor: pointer;
-  width: 100%;
-  background-color: rgba(34,193,195,1);
-}
-.Acoes__adicionar:hover{
-    background-color: #ffff;
-    color:rgba(34,193,195,1);
-    border: 1px solid rgba(34,193,195,1);
-}
-.deletar {
-  border: none;
-  color: white;
-  border-radius: 5px;
-  font-family: "Exo", sans-serif;
-  padding: 5px;
-  min-width: 200px;
-  text-align: center;
-  font-weight: 700;
-  text-transform: uppercase;
-  cursor: pointer;
-  width: 100%;
-  background-color: rgb(219, 49, 49);
-}
-.Atualizar{
-  border: none;
-  color: white;
-  border-radius: 5px;
-  font-family: "Exo", sans-serif;
-  padding: 5px;
-  min-width: 200px;
-  text-align: center;
-  font-weight: 700;
-  text-transform: uppercase;
-  cursor: pointer;
-  width: 100%;
-  background-color:rgb(37, 136, 138);
-}
-.container__button{
-  display: flex;
-  flex-direction: row;
-  gap: 20px;
-}
-.ativa {
-  background: rgb(100, 162, 163);
-}
+
 /* Works on Firefox */
 * {
   scrollbar-width: thin;

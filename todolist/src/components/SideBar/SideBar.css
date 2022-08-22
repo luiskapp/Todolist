@@ -38,7 +38,8 @@
     margin-top: 30%;
 }
 .btn__sair{
-    margin-top: 80%;
+    position: relative;
+    margin-top: 50%;
     border: none;
     color: white;
     border-radius: 5px;

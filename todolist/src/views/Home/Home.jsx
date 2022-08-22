@@ -70,10 +70,11 @@ function Home() {
           {canShowAdicionaTarefaModal && (
             <AdicionaEditaTarefaModal
               mode={modoAtual}
-              closeModal={handleCloseModal}
-              onCreateTarefa={(todolist) => setTarefaParaAdicionar(todolist)}
-              onUpdatetarefa={(todolist) => setTarefaEditada(todolist)}
               tarefaToUpdate={tarefaParaEditar}
+              onCreateTarefa={(todolist) => setTarefaParaAdicionar(todolist)}
+              closeModal={handleCloseModal}
+              onUpdatetarefa={(todolist) => setTarefaEditada(todolist)}
+
             />
           )}
           {tarefaParaDeletar && (

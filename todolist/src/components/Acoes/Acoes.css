@@ -1,0 +1,59 @@
+.container__button{
+  margin-top: 40px;
+}
+
+.Acoes__adicionar {
+    color: white;
+    border-radius: 5px;
+    font-family: "Exo", sans-serif;
+    padding: 5px;
+    min-width: 200px;
+    text-align: center;
+    font-weight: 700;
+    text-transform: uppercase;
+    cursor: pointer;
+    width: 60%;
+    background-color: rgba(34,193,195,1);
+    border: 1px solid rgba(34,193,195,1);
+  }
+  .Acoes__adicionar:hover{
+      background-color: #ffff;
+      color:rgba(34,193,195,1);
+
+  }
+  .deletar {
+    border: none;
+    color: white;
+    border-radius: 5px;
+    font-family: "Exo", sans-serif;
+    padding: 5px;
+    min-width: 200px;
+    text-align: center;
+    font-weight: 700;
+    text-transform: uppercase;
+    cursor: pointer;
+    width: 60%;
+    background-color: rgb(219, 103, 49);
+  }
+  .Atualizar{
+    border: none;
+    color: white;
+    border-radius: 5px;
+    font-family: "Exo", sans-serif;
+    padding: 5px;
+    min-width: 200px;
+    text-align: center;
+    font-weight: 700;
+    text-transform: uppercase;
+    cursor: pointer;
+    width: 60%;
+    background-color:rgb(37, 136, 138);
+  }
+  .container__button{
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+  }
+  .ativa {
+    background: rgb(100, 162, 163);
+  }

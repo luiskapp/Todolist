@@ -7,7 +7,7 @@ function SideBar() {
   const hours = new Date().getHours();
   return (
     <div>
-      <aside className="sidebar">
+      <div className="sidebar">
         <div className="logo">
             <span><b>To Do List</b></span>
             <img src={logo} alt="" width={20} />
@@ -17,9 +17,11 @@ function SideBar() {
           <h2>Olá, Guilherme</h2>
           <p>Hoje é {date} de Julho - {hours}hs</p>
         </div>
-        <div className="GIF"><img src={GIF} alt="" width={170}/></div>
-        <button className="btn__sair">Sair</button>
-      </aside>
+        <div className="GIF"><img src={GIF} alt="" width={170}/></div> 
+      </div>
+      <div>
+      <button className="btn__sair">Sair</button>
+      </div>
       <footer>
       Todos os direitos reservados.<br/>© Copyright
       </footer>
